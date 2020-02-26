@@ -1,11 +1,11 @@
 function fetchBooks() {
-  return fetch('https://anapioficeandfire.com/api/books')
-  .then(function(response) {
-  return response.json();
-  }).then(function(json) {
-  renderBooks(json)
+  return fetch('https://anapioficeandfire.com/api/books') // when you fetch this url, it returns you a promise.
+  .then(function(response) { // Inside the promise is a promise value of "response"
+  return response.json(); // we return the response.json();
+  }).then(function(json) { // which gives us each book, nested in JSON format. We have an argument of json.
+  renderBooks(json) //render books will take each book and make its name into a h2.
   });
-  // or it can be written like this:
+  // or it can be written like this with arrow notation:
   
   // .then(response => response.json())
   // .then(json => renderBooks(json))
